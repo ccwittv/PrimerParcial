@@ -17,6 +17,9 @@
  <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.min.css">
  <script src="bower_components/jquery/dist/jquery.min.js"></script>
 
+<!--CCW -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
  <link rel="icon" href="http://www.octavio.com.ar/favicon.ico">
 <script type="text/javascript" src="js/funcionesAjax.js"></script>
 <script type="text/javascript" src="js/funcionesLogin.js"></script>
@@ -37,9 +40,9 @@
 
 		<nav>
 			<ul id="main-nav" class="clearfix">
-				<li><a onclick="" class="btn">Ingreso</a></li>
-				<li><a onclick="" class="btn">Ir a VOTACIÓN</a> </li>
-				<li><a onclick="" class="btn">Listado de Votaciones</a> </li>
+				<li><a onclick="MostrarDni()" class="btn">Ingreso</a></li>
+				<li><a onclick="Mostrar('MostrarFormAlta')" class="btn">Ir a VOTACIÓN</a> </li>
+				<li><a onclick="Mostrar('MostrarGrilla')" class="btn">Listado de Votaciones</a> </li>
 				
 			</ul>
 			<!-- /#main-nav --> 
@@ -57,14 +60,14 @@
 		<article  class="post clearfix">
 
 			<header  >
-				<h1 class="post-title"><a href="#">AlumnoNombre.Apellido</a></h1>
+				<h1 class="post-title"><a href="#">Cristian.Witt</a></h1>
 				<p class="post-meta"><time class="post-date" datetime="2011-05-08" pubdate>2015</time> <em>en</em> <a href="#">UTN FRA</a></p>
 			</header>
 			<hr>
-			<div id="principal">
+			<div id="principal" style='margin-top: 3cm;'>
 
 <?php
-
+ 
 ?>
 			</div>		
 
@@ -76,15 +79,21 @@
 	
 	
 	<aside id="sidebar">
-
-		<div id="botonesABM">
-				<!--contenido dinamico cargado por ajax-->
-		</div>
+     
+        <section class="widget clearfix" >
+          <h4 class="widgettitle">Botones ABM</h4>
+		    <div id="botonesABM">
+			    <h5> BOTONES ABM </H5>
+		   		   <!--contenido dinamico cargado por ajax-->
+		    </div>
+	    </section>	
 		<!-- /.widget -->
 
 		<section class="widget clearfix" >
 			<h4 class="widgettitle">Contador de votos</h4>
 				<div id="Contador">
+					<!--<h5> CONTADOR DE BOTOX	 </H5>-->
+
 				<!--contenido dinamico cargado por ajax-->
 				</div>
 			
