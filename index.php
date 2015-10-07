@@ -67,7 +67,11 @@
 			<div id="principal" style='margin-top: 3cm;'>
 
 <?php
- 
+  if (!isset($_COOKIE['contadorVoto'])) 
+    {
+	   setcookie('contadorVoto',0,time()+60*60*24*30,'/');	   
+	} 
+
 ?>
 			</div>		
 
@@ -93,7 +97,8 @@
 			<h4 class="widgettitle">Contador de votos</h4>
 				<div id="Contador">
 					<!--<h5> CONTADOR DE BOTOX	 </H5>-->
-
+					<input readonly type="text" value="<?php  if (isset($_COOKIE['contadorVoto']))
+					 											echo $_COOKIE['contadorVoto']; ?>">	
 				<!--contenido dinamico cargado por ajax-->
 				</div>
 			

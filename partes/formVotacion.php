@@ -12,7 +12,8 @@ if(isset($_SESSION['registrado']))
     	    	<h2 class="form-ingreso-heading">Voto</h2>
    	 	    	<label for="provincia" class="sr-only">Provincia</label>
      			    <input type="text"  minlength=""  id="provincia" title="Se necesita un nombre de una provincia" 
-                     class="form-control" placeholder="Provincia" required="" autofocus="" value="">
+                     class="form-control" placeholder="Provincia" required="" autofocus="" 
+                     value="<?php  if (isset($_COOKIE['ultimaProvincia'])) echo $_COOKIE['ultimaProvincia']; ?>">
         		<label for="candidatos" class="sr-only">Candidatos</label>
         			<select id="candidatos" title="Elegir un presidenciable"  class="form-control" placeholder="" required="" autofocus="">
 						    <option value="Scioli">Scioli </option>

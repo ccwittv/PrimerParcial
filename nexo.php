@@ -23,6 +23,8 @@ switch ($queHago) {
 		 $voto->sexo=$_POST['sexo'];
 		 $idInsertado = $voto->GuardarVoto();		 
 		 echo $idInsertado;
+		 setcookie('contadorVoto',$_COOKIE['contadorVoto'] + 1,time()+60*60*24*30,'/');	   		 
+		 setcookie('ultimaProvincia',$_POST['provincia'],time()+60*60*24*30,'/');	   		 		 
 		 break;	
 	case 'BorrarVoto';
 	      $voto = new votacion();
