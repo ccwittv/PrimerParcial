@@ -13,7 +13,7 @@ require_once("clases/votacion.php");
                 <table class='table'>
                         <thead>
                             <tr>
-                                <th>Editar</th> <th>Borrar</th> <th>Dni</th> <th>Provincia</th> <th>Candidato</th> <th>Sexo</th>
+                                <th>Editar</th> <th>Borrar</th> <th>Dni</th> <th>Provincia</th> <th>Localidad</th> <th>Direccion</th> <th>Candidato</th> <th>Sexo</th>
                             </tr>
                         </thead>
                         <tbody>";  
@@ -21,7 +21,9 @@ require_once("clases/votacion.php");
                               { 
                                   echo "<tr>
                                           <td><a class='btn btn-danger' onclick='EditarVoto($voto->id)'>Editar</a></td> 
-                                          <td><a class='btn btn-info' onclick='BorrarVoto($voto->id)'>Borrar</a></td> <td> $voto->dni </td> <td> $voto->provincia </td> <td> $voto->candidato </td> <td> $voto->sexo </td>
+                                          <td><a class='btn btn-info' onclick='BorrarVoto($voto->id)'>Borrar</a></td> 
+                                          <td> $voto->dni </td> <td> $voto->provincia </td> <td> $voto->localidad </td>  <td> $voto->direccion </td>  <td> $voto->candidato </td> <td> $voto->sexo </td>
+                                          <td><a class='btn btn-info' onclick='VerEnMapa($1)'>Ver en mapa</a></td> 
                                         </tr>";    
                               }                                    
        echo            "</tbody>

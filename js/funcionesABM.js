@@ -4,6 +4,8 @@ function GuardarVoto()
     var id=$("#id").val();
     var dni=$("#dni").val();
     var provincia=$("#provincia").val();
+    var localidad=$("#localidad").val();
+    var direccion=$("#direccion").val();
     var candidato=$("#candidatos").val();
     var sexo;
     if ($("#sexom").is(":checked"))
@@ -23,6 +25,8 @@ function GuardarVoto()
 			id:id,
       dni:dni,
 			provincia:provincia,
+      localidad:localidad,
+      direccion:direccion,
 			candidato:candidato,
 			sexo:sexo,
 			
@@ -59,6 +63,7 @@ function GuardarVoto()
 
 function EditarVoto(id)
            { 
+            Mostrar("MostrarFormAlta");
             var funcionAjax = $.ajax({
                                       url:"nexo.php",
                                       type:"post",
@@ -74,6 +79,8 @@ function EditarVoto(id)
                         $("#id").val(voto.id);
 												$("#dni").val(voto.dni);
 												$("#provincia").val(voto.provincia);
+                        $("#localidad").val(voto.localidad);
+                        $("#direccion").val(voto.direccion);
 												$("#candidatos").val(voto.candidato);
 												if (voto.sexo == "masculino")
 												 {
@@ -88,5 +95,5 @@ function EditarVoto(id)
             funcionAjax.fail(function(retorno){ 
                                                alert(retorno);
                                               });
-            Mostrar("MostrarFormAlta");                                                                                                         
+            //Mostrar("MostrarFormAlta");                                                                                                         
            } //FIN FUNCION EditarVoto

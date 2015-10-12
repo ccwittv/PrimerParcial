@@ -4,6 +4,8 @@ class votacion
    public  $id;
    public  $dni;
    public  $provincia;
+   public  $localidad;
+   public  $direccion;
    public  $candidato;
    public  $sexo;
 
@@ -43,11 +45,13 @@ class votacion
     public function InsertarVoto()
       {
          $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-		 $consulta =$objetoAccesoDato->RetornarConsulta("CALL InsertarVotacion(:pdni,:pprovincia,:pcandidato,:psexo)");
+		 $consulta =$objetoAccesoDato->RetornarConsulta("CALL InsertarVotacion(:pdni,:pprovincia,:pcandidato,:psexo,:plocalidad,:pdireccion)");
 		 $consulta->bindValue(':pdni',$this->dni, PDO::PARAM_INT);
 		 $consulta->bindValue(':pprovincia', $this->provincia, PDO::PARAM_STR);
 		 $consulta->bindValue(':pcandidato', $this->candidato, PDO::PARAM_STR);
 		 $consulta->bindValue(':psexo', $this->sexo, PDO::PARAM_STR);
+		 $consulta->bindValue(':plocalidad', $this->localidad, PDO::PARAM_STR);
+		 $consulta->bindValue(':pdireccion', $this->direccion, PDO::PARAM_STR);
 		 $consulta->execute();		
 		 return $objetoAccesoDato->RetornarUltimoIdInsertado();
       }
@@ -66,12 +70,14 @@ class votacion
 	public function ModificacarVoto()
 	 {
 	 	$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-	    $consulta =$objetoAccesoDato->RetornarConsulta("CALL UpdateVotox(:pid, :pdni, :pprovincia, :pcandidato, :psexo)");
+	    $consulta =$objetoAccesoDato->RetornarConsulta("CALL UpdateVotox(:pid, :pdni, :pprovincia, :pcandidato, :psexo,:plocalidad,:pdireccion)");
 		$consulta->bindValue(':pid',$this->id, PDO::PARAM_INT);
 		$consulta->bindValue(':pdni',$this->dni, PDO::PARAM_INT);
 		$consulta->bindValue(':pprovincia',$this->provincia, PDO::PARAM_INT);
 		$consulta->bindValue(':pcandidato', $this->candidato, PDO::PARAM_STR);
 		$consulta->bindValue(':psexo', $this->sexo, PDO::PARAM_STR);
+		$consulta->bindValue(':plocalidad', $this->localidad, PDO::PARAM_STR);
+		$consulta->bindValue(':pdireccion', $this->direccion, PDO::PARAM_STR);
 		return $consulta->execute();
 	 }
  }

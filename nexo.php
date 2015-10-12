@@ -19,6 +19,8 @@ switch ($queHago) {
 		 $voto->id=$_POST['id'];
 		 $voto->dni=$_POST['dni'];
 	     $voto->provincia=$_POST['provincia'];
+	     $voto->localidad=$_POST['localidad'];
+	     $voto->direccion=$_POST['direccion'];
 		 $voto->candidato=$_POST['candidato'];
 		 $voto->sexo=$_POST['sexo'];
 		 $idInsertado = $voto->GuardarVoto();		 
