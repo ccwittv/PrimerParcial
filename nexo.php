@@ -14,6 +14,9 @@ switch ($queHago) {
 	case 'MostrarGrilla':
 	      include("partes/formGrilla.php");
 		  break;
+	case 'VerEnMapa':        
+        include("partes/formMapa.php");
+		break;	  
 	case 'GuardarVoto':
 		 $voto = new votacion();
 		 $voto->id=$_POST['id'];
